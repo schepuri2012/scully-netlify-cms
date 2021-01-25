@@ -29,7 +29,15 @@
 						"polyfills": "src/polyfills.ts",
 						"tsConfig": "tsconfig.app.json",
 						"aot": true,
-						"assets": ["src/favicon.ico", "src/assets", "admin"],
+						"assets": [
+							"src/favicon.ico",
+							"src/assets",
+							{
+								"glob": "**/*",
+								"input": "./admin/",
+								"output": "./assets"
+							}
+						],
 						"styles": ["src/styles.scss"],
 						"scripts": []
 					},
