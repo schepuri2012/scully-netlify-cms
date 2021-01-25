@@ -11,7 +11,8 @@
 		"e2e": "ng e2e",
 		"scully": "scully",
 		"scully:serve": "scully serve",
-		"netlify": "npm run build:prod && npm run scully"
+		"netlify": "npm run build:prod && npm run scully && npm run copy:admin:config",
+		"copy:admin:config": "cp ./admin/config.yml dist/static/admin"
 	},
 	"private": true,
 	"dependencies": {
