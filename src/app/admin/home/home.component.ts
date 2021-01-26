@@ -16,10 +16,12 @@ export class HomeComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
-		const script: HTMLScriptElement = this.renderer2.createElement('script');
-		script.type = 'text/javascript';
-		script.src = `https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js`;
-		script.text = '';
-		this.renderer2.appendChild(this._document.body, script);
+		if (isScullyRunning()) {
+			const script: HTMLScriptElement = this.renderer2.createElement('script');
+			script.type = 'text/javascript';
+			script.src = `https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js`;
+			script.text = '';
+			this.renderer2.appendChild(this._document.body, script);
+		}
 	}
 }
