@@ -1,5 +1,4 @@
 import { ScullyConfig } from '@scullyio/scully';
-import { DisableAngular } from 'scully-plugin-disable-angular';
 export const config: ScullyConfig = {
 	projectRoot: './src',
 	projectName: 'scully-netlify-cms',
@@ -12,5 +11,4 @@ export const config: ScullyConfig = {
 			},
 		},
 	},
-	defaultPostRenderers: [DisableAngular],
 };
