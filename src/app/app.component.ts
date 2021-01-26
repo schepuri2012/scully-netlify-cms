@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
 				return evt instanceof NavigationEnd;
 			}),
 			map((evt: NavigationEnd) => {
-				return evt.url === '/admin';
+				return evt.url.includes('/admin');
 			}),
 		);
 	}
