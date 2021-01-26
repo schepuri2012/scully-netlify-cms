@@ -12,7 +12,7 @@
 		"scully": "scully --sr",
 		"scully:serve": "scully serve",
 		"netlify": "npm run build:prod && npm run scully && npm run copy:admin:config",
-		"copy:admin:config": "cp ./admin/config.yml dist/static"
+		"copy:admin:config": "cp ./admin/config.yml dist/static && cp ./admin/config.yml dist/static/admin"
 	},
 	"private": true,
 	"dependencies": {
