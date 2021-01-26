@@ -1,6 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit, RendererFactory2 } from '@angular/core';
 import { isScullyRunning } from '@scullyio/ng-lib';
+import { Observable } from 'rxjs';
 
 @Component({
 	selector: 'app-home',
@@ -9,6 +10,7 @@ import { isScullyRunning } from '@scullyio/ng-lib';
 })
 export class HomeComponent implements OnInit {
 	private renderer2;
+
 	constructor(private rendererFactory2: RendererFactory2, @Inject(DOCUMENT) private _document: Document) {
 		this.renderer2 = this.rendererFactory2.createRenderer(null, null);
 	}
