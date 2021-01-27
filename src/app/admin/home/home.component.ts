@@ -1,7 +1,5 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit, RendererFactory2 } from '@angular/core';
-import { isScullyRunning } from '@scullyio/ng-lib';
-import { Observable } from 'rxjs';
 
 @Component({
 	selector: 'app-home',
@@ -16,12 +14,10 @@ export class HomeComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
-		if (isScullyRunning()) {
-			const script: HTMLScriptElement = this.renderer2.createElement('script');
-			script.type = 'text/javascript';
-			script.src = `https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js`;
-			script.text = '';
-			this.renderer2.appendChild(this._document.body, script);
-		}
+		const script: HTMLScriptElement = this.renderer2.createElement('script');
+		script.type = 'text/javascript';
+		script.src = `https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js`;
+		script.text = '';
+		this.renderer2.appendChild(this._document.body, script);
 	}
 }
